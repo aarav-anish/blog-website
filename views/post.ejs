@@ -1,0 +1,20 @@
+<%- include("partials/header") -%>
+
+<form action="/delete" method="POST">
+  <h1 class="heading"><%= postTitle %></h1>
+  <button
+    class="icon"
+    title="Delete"
+    type="submit"
+    name="id"
+    value="<%= postId  %>"
+  >
+    <i class="fas fa-2x fa-trash"></i>
+  </button>
+  <p><%= postContent %></p>
+</form>
+<a href="/compose" title="Compose">
+  <i class="fas fa-plus-circle fa-4x compose"></i>
+</a>
+
+<%- include("partials/footer") -%>
