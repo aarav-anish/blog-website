@@ -1,4 +1,6 @@
-require("dotenv").config();
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -92,6 +94,8 @@ app.post("/delete", (req, res) => {
   });
 });
 
-app.listen(process.env.port || 3000, function () {
-  console.log("Server started running");
+const port = process.env.PORT || 3000;
+
+app.listen(port, function () {
+  console.log(`Server started running on ${port}`);
 });
