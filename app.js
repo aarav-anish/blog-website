@@ -1,12 +1,14 @@
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 const _ = require("lodash");
 const content = require(__dirname + "/content.js");
+const cors = require("cors");
 const app = express();
-require("dotenv").config();
 
+app.use(cors());
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
